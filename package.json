@@ -1,0 +1,29 @@
+{
+  "name": "mboto2",
+  "version": "0.0.1",
+  "description": "A funny discord bot.",
+  "main": "mboto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maotovisk/maotoboto2.git"
+  },
+  "keywords": [
+    "maoto",
+    "mboto",
+    "boto",
+    "maoto"
+  ],
+  "author": "Lucas Veiga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maotovisk/maotoboto2/issues"
+  },
+  "homepage": "https://github.com/maotovisk/maotoboto2#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "moment": "^2.24.0"
+  }
+}
