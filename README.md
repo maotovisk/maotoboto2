@@ -27,6 +27,10 @@
     - op.gg
     - probuildslike system
   - Welcome message system
+  - Music bot improvements:
+    - Better quality over youtube
+    - Twitch.tv integration
+    - Soundcloud.com integration
   - Properlly usable per guild config file
   - Give me ideas...
   ## HOW TO USE
