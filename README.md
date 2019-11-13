@@ -30,10 +30,11 @@
   - Properlly usable per guild config file
   - Give me ideas...
   ## HOW TO USE
-  - Make the `/private` dir, then create the `keys.json` file:
+  - Make the `/private` dir, then create the `keys.json` file, and insert discord token:
   ```json
   {
     "DISCORD_TOKEN": ""
   }
   ```
+  - Then `npm start`!
 
