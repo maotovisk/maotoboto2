@@ -14,7 +14,7 @@ mboto.on('ready', () => {
 
 // GUILD CONFIG GENERATOR
 mboto.on('guildCreate', ()=> {
-    //TODO
+    //TODO 
 })
 
 //COMMANDS

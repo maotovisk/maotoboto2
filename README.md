@@ -29,4 +29,11 @@
   - Welcome message system
   - Properlly usable per guild config file
   - Give me ideas...
-  
+  ## HOW TO USE
+  - Make the `/private` dir, then create the `keys.json` file:
+  ```json
+  {
+    "DISCORD_TOKEN": ""
+  }
+  ```
+
