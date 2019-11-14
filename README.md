@@ -1,6 +1,7 @@
 # MaotoBoto 2 - A completely rewrite from scratch
   Welcome to MaotoBoto github page, it's a discord bot written in Node.JS, this is a rewrite of the original one with a CONSIDERABLE cleaner code.
   
+
   ## TODO LIST 
   - Backport MaotoBoto 1.0 features:
     - League of Legends Integration
@@ -32,6 +33,7 @@
     - Twitch.tv integration
     - Soundcloud.com integration
   - Properlly usable per guild config file
+  - Multilanguage support
   - Give me ideas...
   ## HOW TO USE
   - Make the `/private` dir, then create the `keys.json` file, and insert discord token:
