@@ -67,3 +67,4 @@ function getConfig(guildId) {
     }
 }
 
+module.exports = {createConfig, setLanguage, setPrefix, getConfig}

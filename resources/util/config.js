@@ -23,7 +23,7 @@ function createDefaultConfig(recievedConfig) {
     loadConfig();
     config = {
         "prefix": recievedConfig.prefix,
-        "defaultLanguage": recievedConfig.defaultLanguage;
+        "defaultLanguage": recievedConfig.defaultLanguage
     };
     fs.writeFileSync(configPath, config);
 }

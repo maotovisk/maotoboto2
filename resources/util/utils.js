@@ -1,6 +1,6 @@
 //CONST DISCORD
 const   moment  =   require("moment"),
-const   fs      =   require('fs');
+        fs      =   require('fs');
 
 // ENHANCED PRINTER 
 function printLog(message) {

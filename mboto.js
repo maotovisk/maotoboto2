@@ -2,12 +2,11 @@
 const   Discord       =   require('discord.js'),
         Util          =   require("./resources/util/utils"),
         GuildUtil     =   require("./resources/util/guild"),
-        LanguagueUtil =   require("./resources/util/language"):
+        LanguagueUtil =   require("./resources/util/language");
 
 // GLOBAL VARIABLES
 const mboto = new Discord.Client();
 const keys = require('./private/keys.json');
-const guilds = require('./private/guilds.json');
 
 // BOT READY
 mboto.on('ready', () => {
@@ -23,16 +22,13 @@ mboto.on('guildCreate', (guild)=> {
 //COMMANDS
 
 mboto.on('message', (message) => {
+  Util.printLog(message.guild.name + ">" + message.channel.name + ": " + message.content)
   let prefix = GuildUtil.getConfig(message.guild.id).prefix;
-  let args = message.substring(0, prefix.lenght).split(' ');
+  let args = message.content.substring(0, prefix.lenght).split(' ');
   let command = args[0];
   switch (command) {
-    case :
-      
-      break;
-  
     default:
-      break;
+      return message.channel.send("pong!");
   }
 });
 
