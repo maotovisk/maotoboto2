@@ -2,7 +2,7 @@ const   fs      =   require('fs'),
         Util    =   require("./utils"),
         Config  =   require('./config');
 
-var guildConfigPath =   '../private/guilds.json',
+var guildConfigPath =   './private/guilds.json',
     guildConfig;
 
 
@@ -12,8 +12,8 @@ function loadConfig() {
                 const jsonString = fs.readFileSync(guildConfigPath)
                 guildConfig = JSON.parse(jsonString)
             } else {
-                guildConfig = '{}';
-                fs.writeFileSync(guildConfigPath, guildConfig);
+                guildConfig = '';
+                fs.writeFileSync(guildConfigPath, JSON.stringify(guildConfig, null, 2));
             }
           } catch(err) {
             Util.printErr(err);
@@ -22,13 +22,12 @@ function loadConfig() {
 
 function createConfig(guildId) {
     loadConfig();
-    guildConfig[guildId] = {
-        "prefix": Config.getConfig().defaultPrefix,
-        "joinedAt": guild.joinedAt,
-        "defaultLanguage": Config.getConfig().defaultLanguage
-    }
     try {
-        fs.writeFileSync(guildConfigPath, guildConfig);
+        guildConfig[guildId] = {
+            "prefix": Config.getConfig().prefix,
+            "defaultLanguage": Config.getConfig().defaultLanguage
+        };
+        fs.writeFileSync(guildConfigPath, JSON.stringify(guildConfig, null, 2));
         Util.printLog('Created guild config file: ' + guildId);
     } catch(err) {
         Util.printErr(err);
@@ -39,7 +38,7 @@ function setLanguage(guildId, language) {
     loadConfig();
     guildConfig[guildId].defaultLanguage = language;
     try {
-        fs.writeFileSync(guildConfigPath, guildConfig);
+        fs.writeFileSync(guildConfigPath, JSON.stringify(guildConfig, null, 2));
         Util.printLog('Updated guild default language: ' + guildId);
     } catch(err) {
         Util.printErr(err);
@@ -50,7 +49,7 @@ function setPrefix(guildId, prefix) {
     loadConfig();
     guildConfig[guildId].prefix = prefix;
     try {
-        fs.writeFileSync(guildConfigPath, guildConfig);
+        fs.writeFileSync(guildConfigPath, JSON.stringify(guildConfig, null, 2));
         Util.printLog('Updated guild prefix: ' + guildId);
     } catch(err) {
         Util.printErr(err);
@@ -60,7 +59,9 @@ function setPrefix(guildId, prefix) {
 function getConfig(guildId) {
     loadConfig();
     try {
-        return guildConfig[guildId];
+        if (guildConfig[guildId] != undefined)
+            {return guildConfig[guildId];}
+            else {createConfig(guildId)}
     } catch(err) {
         Util.printErr(err);
         return null;

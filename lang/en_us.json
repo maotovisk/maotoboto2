@@ -1,3 +1,11 @@
 {
-    "command_info": ["commands", "Bot written by Maot, using Node.JS"]
+    "command_info": {
+        "command_name": "commands",
+        "usage": "commands",
+        "desc": "Shows the command list",
+        "content": {
+            "header": "There's above the list of commands of the bot:",
+            "footer": "For further information, please take a look at project's github page."
+        }
+    }
 }

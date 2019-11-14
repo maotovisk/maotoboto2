@@ -1,3 +1,11 @@
 {
-    "command_info": ["comandos", "Bot escrito por Maot, utilizando Node.JS"]
+    "command_info": {
+        "command_name": "comandos",
+        "usage": "comandos",
+        "desc": "Exibe todos os comandos",
+        "content": {
+            "header": "Segue abaixo a lista de comandos do maotoboto.",
+            "footer": "Para mais informações, dê uma olhada na pagina do github do projeto."
+        }
+    }
 }
