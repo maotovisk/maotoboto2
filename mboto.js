@@ -1,9 +1,10 @@
 // DEPENDENCIES
-const   Discord       =   require('discord.js'),
-        Util          =   require("./resources/util/utils"),
-        Config        =   require('./resources/util/config')
-        GuildUtil     =   require("./resources/util/guild"),
-        LanguagueUtil =   require("./resources/util/language");
+const   Discord         =   require('discord.js'),
+        Util            =   require("./resources/util/utils"),
+        Config          =   require('./resources/util/config')
+        GuildUtil       =   require("./resources/util/guild"),
+        LanguagueUtil   =   require("./resources/util/language"),
+        CommandsCommand =   require("./resources/command/commands");
 
 // GLOBAL VARIABLES
 const mboto = new Discord.Client();
@@ -28,22 +29,23 @@ mboto.on('guildCreate', (guild)=> {
 //COMMANDS
 
 mboto.on('message', (message) => {
+
   let guildId = message.guild.id;
   let prefix = GuildUtil.getConfig(guildId).prefix;
   let language = GuildUtil.getConfig(guildId).defaultLanguage;
   let localizatedMessages = LanguagueUtil.getLang(language);
-  let unprefixedMessage = message.content.substr(prefix.lengthc, message.content.length);
+  let unprefixedMessage = message.content.substr(prefix.length, message.content.length);
   let args = unprefixedMessage.split(' ');
   let command = args[0];
 
   
   if (message.author.bot == true) return;
-  if (message.content.startsWith(prefix));
+  if (!message.content.startsWith(prefix)) return;
   Util.printLog(message.guild.name + ">" + message.channel.name + ": " + message.content)
-  Util.printLog(command);
+
   switch (command) {
-    case localizatedMessages["command_info"].command_name:
-      return message.channel.send(localizatedMessages['command_info'].content.footer);
+    case localizatedMessages.commands["command_info"].command_name:
+      return CommandsCommand.commandHandler(message, args);
     default:
       return message.channel.send(localizatedMessages['invalid_command']);
   }

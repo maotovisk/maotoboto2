@@ -1,11 +1,15 @@
 {
-    "command_info": {
-        "command_name": "comandos",
-        "usage": "comandos",
-        "desc": "Exibe todos os comandos",
-        "content": {
-            "header": "Segue abaixo a lista de comandos do maotoboto.",
-            "footer": "Para mais informações, dê uma olhada na pagina do github do projeto."
+    "commands": {
+        "command_info": {
+            "aliases": ["comandos","commands"],
+            "command_name": "comandos",
+            "usage": "comandos",
+            "desc": "Exibe todos os comandos",
+            "content": {
+                "commands": "Comandos",
+                "header": "Segue abaixo a lista de comandos do maotoboto.",
+                "footer": "Para mais informações, dê uma olhada na pagina do github do projeto."
+            }
         }
     },
     "invalid_command": "Comando inválido!"

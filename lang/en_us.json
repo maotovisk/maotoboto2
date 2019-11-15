@@ -1,11 +1,15 @@
 {
-    "command_info": {
-        "command_name": "commands",
-        "usage": "commands",
-        "desc": "Shows the command list",
-        "content": {
-            "header": "There's above the list of commands of the bot:",
-            "footer": "For further information, please take a look at project's github page."
+    "commands": {
+        "command_info": {
+            "aliases": ["commands","commands"],
+            "command_name": "commands",
+            "usage": "commands",
+            "desc": "Shows up all the commands",
+            "content": {
+                "commands": "Comandos",
+                "header": "Check out the command list above.",
+                "footer": "For further information, please take a look at the project's github page."
+            }
         }
     },
     "invalid_command": "Invalid command!"
