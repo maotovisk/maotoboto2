@@ -28,19 +28,24 @@ mboto.on('guildCreate', (guild)=> {
 //COMMANDS
 
 mboto.on('message', (message) => {
-  if (message.author.bot == true) return;
-  Util.printLog(message.guild.name + ">" + message.channel.name + ": " + message.content)
   let guildId = message.guild.id;
   let prefix = GuildUtil.getConfig(guildId).prefix;
   let language = GuildUtil.getConfig(guildId).defaultLanguage;
   let localizatedMessages = LanguagueUtil.getLang(language);
-  let args = message.content.substring(0, prefix.lenght).split(' ');
+  let unprefixedMessage = message.content.substr(prefix.lengthc, message.content.length);
+  let args = unprefixedMessage.split(' ');
   let command = args[0];
+
+  
+  if (message.author.bot == true) return;
+  if (message.content.startsWith(prefix));
+  Util.printLog(message.guild.name + ">" + message.channel.name + ": " + message.content)
+  Util.printLog(command);
   switch (command) {
     case localizatedMessages["command_info"].command_name:
-      return message.channel.send(localizatedMessages["command_info"].content.footer)
+      return message.channel.send(localizatedMessages['command_info'].content.footer);
     default:
-      return message.channel.send("Comando inválido");
+      return message.channel.send(localizatedMessages['invalid_command']);
   }
 });
 

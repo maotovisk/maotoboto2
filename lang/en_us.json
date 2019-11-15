@@ -7,5 +7,6 @@
             "header": "There's above the list of commands of the bot:",
             "footer": "For further information, please take a look at project's github page."
         }
-    }
+    },
+    "invalid_command": "Invalid command!"
 }

@@ -3,7 +3,7 @@ const   fs      =   require('fs'),
         Config  =   require('./config');
 
 var guildConfigPath =   './private/guilds.json',
-    guildConfig;
+    guildConfig = {};
 
 
 function loadConfig() {
@@ -12,7 +12,6 @@ function loadConfig() {
                 const jsonString = fs.readFileSync(guildConfigPath)
                 guildConfig = JSON.parse(jsonString)
             } else {
-                guildConfig = '';
                 fs.writeFileSync(guildConfigPath, JSON.stringify(guildConfig, null, 2));
             }
           } catch(err) {
@@ -21,7 +20,7 @@ function loadConfig() {
 }
 
 function createConfig(guildId) {
-    loadConfig();
+    loadConfig()
     try {
         guildConfig[guildId] = {
             "prefix": Config.getConfig().prefix,
@@ -60,8 +59,13 @@ function getConfig(guildId) {
     loadConfig();
     try {
         if (guildConfig[guildId] != undefined)
-            {return guildConfig[guildId];}
-            else {createConfig(guildId)}
+        {
+            return guildConfig[guildId];
+        }
+        else {
+            createConfig(guildId);
+            return guildConfig[guildId];
+        }
     } catch(err) {
         Util.printErr(err);
         return null;
