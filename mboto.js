@@ -1,10 +1,11 @@
 // DEPENDENCIES
-const   Discord         =   require('discord.js'),
-        Util            =   require("./resources/util/utils"),
-        Config          =   require('./resources/util/config')
-        GuildUtil       =   require("./resources/util/guild"),
-        LanguagueUtil   =   require("./resources/util/language"),
-        CommandsCommand =   require("./resources/command/commands");
+const   Discord           =   require('discord.js'),
+        Util              =   require("./resources/util/utils"),
+        Config            =   require('./resources/util/config')
+        GuildUtil         =   require("./resources/util/guild"),
+        LanguagueUtil     =   require("./resources/util/language"),
+        CommandsCommand   =   require("./resources/command/commands"),
+        SetGuildLanguage  =   require("./resources/command/setGuildLanguage");
 
 // GLOBAL VARIABLES
 const mboto = new Discord.Client();
@@ -46,6 +47,8 @@ mboto.on('message', (message) => {
   switch (command) {
     case localizatedMessages.commands["command_info"].command_name:
       return CommandsCommand.commandHandler(message, args);
+    case localizatedMessages.commands["command_set_language_guild"].command_name:
+      return SetGuildLanguage.commandHandler(message, args);
     default:
       return message.channel.send(localizatedMessages['invalid_command']);
   }

@@ -12,8 +12,13 @@ function getLang(lang) {
     } 
 }
 
+function getLangList() {
+    return langs;
+}
+
+
 function getLocalization(language, item_name) {
     return getLang(language)[item_name];
 }
 
-module.exports = {getLocalization, getLang}
+module.exports = {getLocalization, getLangList, getLang}

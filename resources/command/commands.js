@@ -7,8 +7,9 @@ function getCommands(prefix, lang) {
     let localization = LanguagueUtil.getLang(lang);
     let commands = localization.commands;
     let returedCommandString = "";
-    for (var command in commands) {
-        returedCommandString += (prefix + command["command_name"] + " - " + command["desc"] + "\n");
+    for (var prop in commands) {
+        const command = commands[prop];
+        returedCommandString += (prefix + command.command_name + " - " + command.desc + "\n");
     }
     return returedCommandString;
 }

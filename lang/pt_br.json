@@ -1,7 +1,7 @@
 {
     "commands": {
         "command_info": {
-            "aliases": ["comandos","commands"],
+            "aliases": ["info","commands"],
             "command_name": "comandos",
             "usage": "comandos",
             "desc": "Exibe todos os comandos",
@@ -10,7 +10,20 @@
                 "header": "Segue abaixo a lista de comandos do maotoboto.",
                 "footer": "Para mais informações, dê uma olhada na pagina do github do projeto."
             }
+        },
+        "command_set_language_guild": {
+            "aliases": ["idioma","setidioma"],
+            "command_name": "idioma",
+            "usage": "idioma [idioma | list]",
+            "desc": "Define a linguagem preferível padrão do bot",
+            "content": {
+                "languages": "Idiomas disponiveis",
+                "language_list": "Segue abaixo a lista de linguagens disponíveis no bot.",
+                "language_set_success": "Sua linguagem agora está definida como",
+                "footer": "Para mais informações, dê uma olhada na pagina do github do projeto. "
+            }
         }
     },
-    "invalid_command": "Comando inválido!"
+    "invalid_command": "Comando inválido!",
+    "invalid_usage": "Uso inválido, uso correto: "
 }

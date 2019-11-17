@@ -1,4 +1,5 @@
 {
+    "language": "en_US",
     "commands": {
         "command_info": {
             "aliases": ["commands","commands"],
@@ -10,7 +11,20 @@
                 "header": "Check out the command list above.",
                 "footer": "For further information, please take a look at the project's github page."
             }
+        },
+        "command_set_language_guild": {
+            "aliases": ["setlang","setlanguage"],
+            "command_name": "language",
+            "usage": "language [language | list]",
+            "desc": "Defines the default language of the bot ",
+            "content": {
+                "languages": "Availble languages",
+                "language_list": "Check out the abavaible language list above.",
+                "language_set_success": "Your language is now",
+                "footer": "For further information, please take a look at the project's github page."
+            }
         }
     },
-    "invalid_command": "Invalid command!"
+    "invalid_command": "Invalid command!",
+    "invalid_usage": "Invalid usage, this is the correct one: "
 }
